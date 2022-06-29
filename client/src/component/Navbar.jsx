@@ -10,7 +10,7 @@ const Navbar = () => {
  <div className="max-w-screen-2xl bg-blue-500">
  <div className=' w-[40%] mx-auto flex justify-between'>
       <button onClick={() => navigate('/')}>Adduser</button>
-     <button onClick={ () =>navigate('/about')}>ALL User</button>
+     <button onClick={ () =>navigate('/alluser')}>ALL User</button>
      
  </div>
 

@@ -12,3 +12,16 @@ export const addUser = async(data)=>{
 
     }
 }
+
+
+// ----- get ALL users ---------
+export const getUsers = async()=>{
+    try{
+      console.log("listening to getUsers")
+      return await axios.get(`${URL}/all`)
+
+    } catch(err){
+        console.log("Error While Calling getUsers API", err);
+
+    }
+}

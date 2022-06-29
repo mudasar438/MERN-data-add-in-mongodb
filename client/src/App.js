@@ -8,6 +8,7 @@ import Home from "./component/Home";
 // import Belog from "./component/Belog";
 // import NoteState from "./component/Context/NoteState";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Alluser from "./component/alluser";
 // import DetaFeaching from "./component/DetaFeaching";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Navbar />
     <Routes>
        <Route path="/" element={<Home />} /> 
+       <Route path="/alluser" element={<Alluser />} />
       
     </Routes>
     </Router>

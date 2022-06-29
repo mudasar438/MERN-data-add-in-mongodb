@@ -19,7 +19,8 @@ const Home = () => {
 
   const submitbtn = ()=>{
     console.log("You are click on add button"  , user);
-    addUser(user);
+    addUser(user)
+    alert("Data ADD Into MongoBD")
     
   }
   return (

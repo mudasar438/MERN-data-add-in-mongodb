@@ -3,7 +3,7 @@
  // in the function create new userModal and save it to the database
  
  const UserModal = require('../secma/userSema.js')
-const addUser = async(req , res) => {
+exports.addUser = async(req , res) => {
     const user1 = req.body;
     console.log(user1)
     const newUser =new UserModal(user1);
@@ -16,7 +16,21 @@ const addUser = async(req , res) => {
         console.log(err.message);
 
     }
-
-
 }
-module.exports = addUser;
+// module.exports = addUser;
+
+// console.log(UserModal)
+exports.getUsers = async(req , res) => {
+    try{
+        const users = await UserModal.find();
+        res.status(200).json(users)
+        
+
+    } catch (err){
+        console.log("get requt field from mongodb",err.message);
+
+
+    }
+} 
+
+// module.exports = getUsers;
