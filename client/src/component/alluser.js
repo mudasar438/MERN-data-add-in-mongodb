@@ -51,8 +51,9 @@ const Alluser = () => {
                         <td className="px-4 py-2">{user.email}</td>
                         <td className="px-4 py-2">{user.phone}</td>
                         <td className="px-4 py-2">{user.city}</td>
+                        {/* <td className='px-4 py-2'> {user._id}</td> */}
                         <td className="px-4 py-2 space-x-3">
-                      <Link to = "/edit">
+                      <Link to = {`/edit/${user._id}`}>
                       <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-3 rounded-md">
                             Edit
                           </button>

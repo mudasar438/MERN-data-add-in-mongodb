@@ -1,9 +1,12 @@
 import React, { useEffect } from 'react'
 import { editUser } from '../serves/api'
 import { useState } from 'react'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 const EditUser = () => {
+  const Navigate = useNavigate();
+  const { id } = useParams();
   const inpvalues = {
     name: '',
     email: '',
@@ -21,16 +24,17 @@ const EditUser = () => {
     }, [])
     
     const loadUserDetail = async() => {
-      // await editUser().then(res => {
-      //   setUser(res.data)
-      // }).catch(err => {
-      //   console.log(err);
-      // })
+      const response = await editUser(id)
+      setUser(response.user)
+    
 
     }
 
 
-    const submitbtn = () => {
+    const submitbtn = async() => {
+      await editUser(user)
+      Navigate('/all')
+
       console.log("Click EDit btn");
     }
   return (

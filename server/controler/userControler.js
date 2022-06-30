@@ -3,6 +3,8 @@
  // in the function create new userModal and save it to the database
  
  const UserModal = require('../secma/userSema.js')
+
+ // ----------- ADD USER -----------
 exports.addUser = async(req , res) => {
     const user1 = req.body;
     console.log(user1)
@@ -20,7 +22,7 @@ exports.addUser = async(req , res) => {
 }
 // module.exports = addUser;
 
-// console.log(UserModal)
+// ----------- GET ALL USERS -----------
 exports.getUsers = async(req , res) => {
     try{
         const users = await UserModal.find();
@@ -35,4 +37,16 @@ exports.getUsers = async(req , res) => {
     }
 } 
 
-// module.exports = getUsers;
+// ----------- GET USER BY ID  or EDIT -----------
+exports.getUserById = async(req , res) => {
+    const eid = req.params.id;
+    console.log(eid);
+    try{
+        const user = await UserModal.find({_id: eid});
+        console.log("User get Data From Id")
+        res.status(200).json(user)
+        
+
+    } catch (err){
+        console.log("get requt field from mongodb",err.message);
+}}
