@@ -9,6 +9,7 @@ import Home from "./component/Home";
 // import NoteState from "./component/Context/NoteState";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Alluser from "./component/alluser";
+import EditUser from "./component/editUser";
 // import DetaFeaching from "./component/DetaFeaching";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
     <Routes>
        <Route path="/" element={<Home />} /> 
        <Route path="/alluser" element={<Alluser />} />
+       <Route path="/edit" element={<EditUser />} />
       
     </Routes>
     </Router>

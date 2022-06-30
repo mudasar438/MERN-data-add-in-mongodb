@@ -9,6 +9,7 @@ exports.addUser = async(req , res) => {
     const newUser =new UserModal(user1);
     try{
         await newUser.save();
+        console.log("user added to the database");
         // res.send(newUser);
         res.status(201).json(newUser)
 
@@ -23,6 +24,7 @@ exports.addUser = async(req , res) => {
 exports.getUsers = async(req , res) => {
     try{
         const users = await UserModal.find();
+        console.log("User get Data From Database")
         res.status(200).json(users)
         
 

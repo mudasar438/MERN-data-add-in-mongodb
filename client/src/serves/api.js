@@ -25,3 +25,16 @@ export const getUsers = async()=>{
 
     }
 }
+
+
+//----------- Edit User -----------
+// export const editUser = async(data)=>{
+//     try{
+//       console.log("listening to editUser", data)
+//       return await axios.put(`${URL}/edit`, data)
+
+//     } catch(err){
+//         console.log("Error While Calling editUser API", err);
+
+//     }
+// }

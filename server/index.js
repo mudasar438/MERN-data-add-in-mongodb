@@ -1,19 +1,15 @@
+require('./db')
 const express = require('express');
 const router = require('./routes/route');
+const port = process.env.PORT ||  8000;
 const app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-require('./db')
-app.use(bodyParser.json({extends: true}));
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 app.use(cors());    
 app.use('/', router);
 
 
-const PORT = 8000;
-
-
-
-app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
 })

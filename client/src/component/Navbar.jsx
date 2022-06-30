@@ -7,10 +7,10 @@ const Navbar = () => {
 
   return (
  <>
- <div className="max-w-screen-2xl bg-blue-500">
- <div className=' w-[40%] mx-auto flex justify-between'>
-      <button onClick={() => navigate('/')}>Adduser</button>
-     <button onClick={ () =>navigate('/alluser')}>ALL User</button>
+ <div className="max-w-screen-2xl bg-black text-white mb-5">
+ <div className=' md:w-[40%] mx-auto flex justify-around text-xl p-3'>
+      <button onClick={() => navigate('/')} className="border-2 p-2 rounded-xl">Add User</button>
+     <button onClick={ () =>navigate('/alluser')} className="border-2 p-2 rounded-xl">ALL User</button>
      
  </div>
 
