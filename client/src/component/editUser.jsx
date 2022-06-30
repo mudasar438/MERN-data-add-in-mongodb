@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { editUser } from '../serves/api'
+import { saveUser } from '../serves/api'
 import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
@@ -16,6 +17,7 @@ const EditUser = () => {
   const [user, setUser]=useState(inpvalues);
 
     const handleChange = (e) => {
+      setUser({...user,[e.target.name]: e.target.value})
 
     }
 
@@ -25,18 +27,21 @@ const EditUser = () => {
     
     const loadUserDetail = async() => {
       const response = await editUser(id)
-      setUser(response.user)
+      console.log  ( "=============>",response);
+      setUser(response.data[0])
     
 
     }
 
 
     const submitbtn = async() => {
-      await editUser(user)
-      Navigate('/all')
+      await saveUser(user, id)
+      Navigate('/alluser')
 
       console.log("Click EDit btn");
     }
+
+     console.log("=======>", user);
   return (
    <>
    <div className=" max-w-screen-2xl my-12 ">
@@ -49,19 +54,19 @@ const EditUser = () => {
         
       <div className="my-2 flex justify-around">
         <label htmlFor="">Name</label>
-        <input type="text" placeholder='username' name='name' onChange={(e)=>handleChange(e)} className='border border-black  '/>
+        <input type="text" placeholder='username' name='name' value={user.name} onChange={(e)=>handleChange(e)} className='border border-black  '/>
       </div>
       <div className="my-2 flex justify-around">
         <label htmlFor="">Email</label>
-        <input type="text" placeholder='Email@gmail.com' name='email' onChange={(e)=>handleChange(e)}  className='border border-black '/>
+        <input type="text" placeholder='Email@gmail.com' name='email' value={user.email} onChange={(e)=>handleChange(e)}  className='border border-black '/>
       </div>
       <div className="my-2 flex justify-around">
         <label htmlFor="">Phone</label>
-        <input type="text" placeholder='+923564296' name='phone' onChange={(e)=>handleChange(e)} className='border border-black '/>
+        <input type="text" placeholder='+923564296' name='phone' value={user.phone} onChange={(e)=>handleChange(e)} className='border border-black '/>
       </div>
       <div className="my-2 flex justify-around">
         <label htmlFor="">City</label>
-        <input type="text" placeholder='FSD' name='city' onChange={(e)=>handleChange(e)} className='border border-black '/>
+        <input type="text" placeholder='FSD' name='city' value={user.city} onChange={(e)=>handleChange(e)} className='border border-black '/>
       </div>
       <div className=" bg-slate-500 rounded-md border border-gray-700 w-[78%] mx-auto  text-center mr-0">
        <button onClick={submitbtn} >Edit Save</button>

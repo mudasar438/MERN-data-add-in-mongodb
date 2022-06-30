@@ -50,3 +50,35 @@ exports.getUserById = async(req , res) => {
     } catch (err){
         console.log("get requt field from mongodb",err.message);
 }}
+
+// ----------- SAVE USER -----------
+exports.saveUser = async(req , res) => {
+    const eid = req.params.id;
+    const user = req.body;
+    const editUser = new UserModal(user);
+    console.log(user)
+    try{
+        const userE = await UserModal.updateOne({_id: eid},editUser);
+        console.log("User update save")
+        res.status(200).json(userE)
+        
+
+    } catch (err){
+        console.log("get requt field from mongodb",err.message);
+}
+}
+
+
+// ----------- DELETE USER -----------
+exports.deleteUser = async(req , res) => {
+    const eid = req.params.id;
+    try{
+        const user = await UserModal.deleteOne({_id: eid});
+        console.log("User delete")
+        res.status(200).json(user)
+        
+
+    } catch (err){
+        console.log("get requt field from mongodb",err.message);
+}
+}

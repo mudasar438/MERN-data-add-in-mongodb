@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect , useState} from 'react'
 import {getUsers} from '../serves/api';
+import {deleteuser} from '../serves/api';
 import { Link } from 'react-router-dom';
 
 const Alluser = () => {
@@ -16,6 +17,11 @@ const Alluser = () => {
       console.log(response.data);
       setUsers(response.data);
 
+    }
+
+    const deleteUserDetail =async(id)=>{
+      await deleteuser(id);
+      getalluser()
     }
   return (
    <>
@@ -59,7 +65,7 @@ const Alluser = () => {
                           </button>
                       </Link>
                           
-                          <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-md">
+                          <button onClick={()=> deleteUserDetail(user._id)} className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-3 rounded-md">
                             Delete
                           </button>
                         </td>

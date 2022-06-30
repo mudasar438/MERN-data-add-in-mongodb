@@ -38,3 +38,28 @@ export const editUser = async(id)=>{
 
     }
 }
+
+
+// ------------save edited user--------
+export const saveUser = async(user, id)=>{
+    try{
+      console.log("listening to saveUser")
+      return await axios.post(`${URL}/${id}`, user)
+
+    } catch(err){
+        console.log("Error While Calling saveUser API", err);
+
+    }
+}
+
+// ------------delete user--------
+export const deleteuser = async(id)=>{
+    try{
+      console.log("listening to deleteUser")
+      return await axios.delete(`${URL}/${id}`)
+
+    } catch(err){
+        console.log("Error While Calling deleteUser API", err);
+
+    }
+}
