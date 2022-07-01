@@ -1,6 +1,8 @@
 import React from 'react';
 import { addUser } from '../serves/api';
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Home = () => {
   const inpvalues = {
@@ -20,7 +22,14 @@ const Home = () => {
   const submitbtn = ()=>{
     console.log("You are click on add button");
     addUser(user)
-    alert("Data ADD Into MongoBD")
+  toast.success("User Added Successfully", {
+    position: "top-right",
+    autoClose: 1000,
+  })
+
+
+    // alert("Data ADD Into MongoBD")
+
     
   }
   return (
@@ -52,6 +61,7 @@ const Home = () => {
       </div>
       <div className=" bg-slate-500 rounded-md border p-2 border-gray-700 w-[80%] mx-auto  text-center mr-auto">
        <button onClick={submitbtn} >Submit</button>
+       <ToastContainer />
       </div>
       {/* </form> */}
 

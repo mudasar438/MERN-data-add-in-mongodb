@@ -5,6 +5,8 @@ import { useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
 
+
+
 const EditUser = () => {
   const Navigate = useNavigate();
   const { id } = useParams();
@@ -37,8 +39,8 @@ const EditUser = () => {
     const submitbtn = async() => {
       await saveUser(user, id)
       Navigate('/alluser')
-
-      console.log("Click EDit btn");
+     
+      
     }
 
      console.log("=======>", user);
@@ -72,6 +74,7 @@ const EditUser = () => {
       </div>
       <div className=" bg-slate-500 rounded-md border p-2 border-gray-700 w-[80%] mx-auto  text-center mr-auto">
        <button onClick={submitbtn} >Edit Save</button>
+      
       </div>
       {/* </form> */}
 

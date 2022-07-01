@@ -10,6 +10,7 @@ import Home from "./component/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Alluser from "./component/alluser";
 import EditUser from "./component/editUser";
+import Search from "./component/search";
 
 // import DetaFeaching from "./component/DetaFeaching";
 
@@ -24,6 +25,7 @@ function App() {
        <Route path="/" element={<Home />} /> 
        <Route path="/alluser" element={<Alluser />} />
        <Route path="/edit/:id" element={<EditUser />} />
+       <Route path="/search" element={<Search />} />
       
     </Routes>
     </Router>
