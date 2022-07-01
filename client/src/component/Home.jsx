@@ -29,7 +29,7 @@ const Home = () => {
       <div className=" text-3xl text-center md:w-[20%] mx-auto my-5 text-white">Add User</div>
 
 
-      <div className=" w-[80%]  md:w-[35%] mx-auto border-2 rounded-md p-2 text-white">
+      <div className=" w-[80%]  md:w-[35%] mx-auto  rounded-md p-2 text-white">
         {/* <form action=""> */}
 
         
