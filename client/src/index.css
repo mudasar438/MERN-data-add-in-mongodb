@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 
+@import url('https://fonts.googleapis.com/css2?family=Arima:wght@100&family=Ubuntu:wght@300;400&display=swap');
 body{
   background: #141313;
+  font-family: 'Arima', cursive;
+  font-family: 'Ubuntu', sans-serif;
 }
