@@ -4,7 +4,7 @@ const URL = "http://localhost:8000"
 
 export const addUser = async(data)=>{
     try{
-      console.log("listening to addUser", data)
+      // console.log("listening to addUser", data)
       return await axios.post(`${URL}/add`, data)
 
     } catch(err){
@@ -17,7 +17,7 @@ export const addUser = async(data)=>{
 // ----- get ALL users ---------
 export const getUsers = async()=>{
     try{
-      console.log("listening to getUsers")
+      // console.log("listening to getUsers")
       return await axios.get(`${URL}/all`)
 
     } catch(err){
@@ -30,7 +30,7 @@ export const getUsers = async()=>{
 //----------- Edit User -----------
 export const editUser = async(id)=>{
     try{
-      console.log("listening to editUser")
+      // console.log("listening to editUser")
       return await axios.get(`${URL}/${id}`)
 
     } catch(err){
@@ -43,7 +43,7 @@ export const editUser = async(id)=>{
 // ------------save edited user--------
 export const saveUser = async(user, id)=>{
     try{
-      console.log("listening to saveUser")
+      // console.log("listening to saveUser")
       return await axios.post(`${URL}/${id}`, user)
 
     } catch(err){
@@ -55,7 +55,7 @@ export const saveUser = async(user, id)=>{
 // ------------delete user--------
 export const deleteuser = async(id)=>{
     try{
-      console.log("listening to deleteUser")
+      // console.log("listening to deleteUser")
       return await axios.delete(`${URL}/${id}`)
 
     } catch(err){

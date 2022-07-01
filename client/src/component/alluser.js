@@ -14,12 +14,12 @@ const Alluser = () => {
   const handleSearch = (e) => {
     setSearch(e.target.value);
   };
-  console.log(search);
+  // console.log(search);
   useEffect(() => {
-    console.log('clicked')
+    // console.log('clicked')
     getalluser();
   }, []);
-console.log(users,"users")
+// console.log(users,"users")
   const getalluser = async () => {
     try{
 

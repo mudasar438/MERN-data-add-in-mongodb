@@ -29,7 +29,7 @@ const EditUser = () => {
     
     const loadUserDetail = async() => {
       const response = await editUser(id)
-      console.log  ( "=============>",response);
+      // console.log  ( "=============>",response);
       setUser(response.data[0])
     
 
@@ -43,7 +43,7 @@ const EditUser = () => {
       
     }
 
-     console.log("=======>", user);
+    //  console.log("=======>", user);
   return (
    <>
    <div className=" max-w-screen-2xl my-12 ">
